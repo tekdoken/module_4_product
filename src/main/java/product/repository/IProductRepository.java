@@ -7,4 +7,5 @@ import product.model.Product;
 @Repository
 public interface IProductRepository extends JpaRepository<Product,Integer> {
 Iterable<Product> findAllByCategory(Category category);
+    Iterable<Product> findByNameContaining(String name);
 }
