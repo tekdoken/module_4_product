@@ -34,11 +34,10 @@
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" th:field="*{description}"></textarea>
     </div>
     <select th:field="*{category}" class="form-select" aria-label="Disabled select example">
-        <option th:each="p:${category}" th:value="${p.id}" th:text="${p.name}">One</option>
+        <option th:each="p:${category}" th:value="${p.id}" th:text="${p.name}"></option>
     </select>
     <hr>
-    <button type="submit" class="btn btn-primary">Submit</button><button th:action="@{/}" type="button" class="btn btn-secondary">back</button>
+    <button type="submit" class="btn btn-primary">Submit</button><a href="/"><input type="button" value="back" class="btn btn-secondary"></input></a>
 </form>
-
 </body>
 </html>

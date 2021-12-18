@@ -17,7 +17,7 @@ public class CategoryService implements ICategoryService{
 
     @Override
     public Optional<Category> findById(int id) {
-        return Optional.empty();
+        return iCategoryRepository.findById(id);
     }
 
     @Override

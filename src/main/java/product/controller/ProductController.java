@@ -36,13 +36,14 @@ public class ProductController {
     @PostMapping("/create")
     public String create(Product product) {
         iProductService.save(product);
-        return "redirect:";
+        return "redirect:/";
     }
 
     @GetMapping("")
     public String list(Model model) {
-        Iterable<Product> products=new ArrayList<>();
-      products=  iProductService.findAll();
-      return "";
+        Iterable<Product> products = new ArrayList<>();
+        products = iProductService.findAll();
+        model.addAttribute("products", products);
+        return "list";
     }
 }

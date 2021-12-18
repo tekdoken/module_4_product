@@ -10,15 +10,36 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-<button type="submit" class="btn btn-primary">Submit</button>
 <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
+        <a href="/create">  <button  class="btn btn-primary">create product</button></a>
         <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
     </div>
 </nav>
-
+<table class="table table-bordered">
+    <tr>
+        <td>Id</td>
+        <td>Productname</td>
+        <td>Price</td>
+        <td>Quantity</td>
+        <td>Color</td>
+        <td>Category</td>
+        <td>Action</td>
+    </tr>
+    <th:block th:each="pro:${products}">
+        <tr>
+            <td th:text="${pro.id}"></td>
+            <td th:text="${pro.name}"></td>
+            <td th:text="${pro.price}"></td>
+            <td th:text="${pro.quantity}"></td>
+            <td th:text="${pro.color}"></td>
+            <td th:text="${pro.category.name}"></td>
+            <td th:text="${pro.category.name}"></td>
+        </tr>
+    </th:block>
+</table>
 </body>
 </html>
