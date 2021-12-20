@@ -30,7 +30,17 @@
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" th:field="*{description}"></textarea>
     </div>
     <select th:field="*{category}" class="form-select" aria-label="Disabled select example">
-        <option th:each="p:${category}" th:value="${p.id}" th:text="${p.name}"></option>
+        <th:block th:each="p:${category}">
+            <th:block th:if="${product.category.id}==${p.id}">
+                <option th:value="${p.id}" th:text="${p.name}"></option>
+            </th:block>
+        </th:block>
+        <th:block th:each="p:${category}">
+            <th:block th:if="${product.category.id}!=${p.id}">
+                <option th:value="${p.id}" th:text="${p.name}"></option>
+            </th:block>
+        </th:block>
+
     </select>
     <hr>
     <button type="submit" class="btn btn-primary">Update</button>
