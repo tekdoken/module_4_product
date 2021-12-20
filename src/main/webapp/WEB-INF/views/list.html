@@ -6,6 +6,9 @@
 <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
         <a href="create">  <button  class="btn btn-primary">create product</button></a><a href="/"><input type="button" value="List Product" class="btn btn-secondary"></a>
+        <a th:href="@{/sort/2}" name="a"  role="button">sortA</a>
+        <a th:href="@{/sort/1}" name="d"  role="button">sortD</a>
+
         <form class="d-flex">
             <input name="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>

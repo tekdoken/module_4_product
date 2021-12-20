@@ -42,4 +42,16 @@ public class ProductService implements IProductService {
     public Iterable<Product> findByName(String name) {
         return iProductRepository.findByNameContaining(name);
     }
+
+    @Override
+    public Iterable<Product> findAllByOrderByPriceDesc() {
+        return iProductRepository.findAllByOrderByPriceDesc();
+    }
+
+    @Override
+    public Iterable<Product> findAllByOrderByPriceAsc() {
+        return iProductRepository.findAllByOrderByPriceAsc();
+    }
+
+
 }

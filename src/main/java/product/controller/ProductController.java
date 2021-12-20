@@ -41,6 +41,22 @@ public class ProductController {
         return "redirect:/";
     }
 
+    @GetMapping("sort/{idc}")
+    public String sort(Model model, String search,@PathVariable Integer idc) {
+        Iterable<Product> products = new ArrayList<>();
+        if (search == null) {
+            if (idc==1  ) {
+                products = iProductService.findAllByOrderByPriceDesc();
+            } else {
+                products = iProductService.findAllByOrderByPriceAsc();
+            }
+        } else {
+            products = iProductService.findByName(search);
+        }
+        model.addAttribute("products", products);
+        return "list";
+    }
+
     @GetMapping("")
     public String list(Model model, String search) {
         Iterable<Product> products = new ArrayList<>();
