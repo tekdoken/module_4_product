@@ -52,6 +52,7 @@ public class ProductController {
             }
         } else {
             products = iProductService.findByName(search);
+            model.addAttribute("back","back");
         }
         model.addAttribute("products", products);
         return "list";
@@ -64,6 +65,7 @@ public class ProductController {
             products = iProductService.findAll();
         } else {
             products = iProductService.findByName(search);
+            model.addAttribute("back","back");
         }
         model.addAttribute("products", products);
         return "list";

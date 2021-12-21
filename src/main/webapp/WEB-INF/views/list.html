@@ -5,10 +5,15 @@
 <body>
 <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
-        <a href="create">  <button  class="btn btn-primary">create product</button></a><a href="/"><input type="button" value="List Product" class="btn btn-secondary"></a>
-
+        <a href="create">
+            <button class="btn btn-primary">create product</button>
+        </a>
+        <th:block th:if="${back}==back">
+        <a href="/"><input type="button" value="List Product" class="btn btn-secondary"></a>
+        </th:block>
         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
                 Sort
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
